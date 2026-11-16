@@ -1,0 +1,34 @@
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.pkl
+*.joblib
+.env
+.env.*
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+
+# Research datasets and generated artifacts
+tcga_subset/
+output/
+reports/
+lightning_logs/
+pathfact/data/
+pathfact/outputs/
+
+# Python cache
+__pycache__/
+
+# PathFact generated data and results
+pathfact/data/
+pathfact/outputs/
+
+# Local duplicate and backup files
+modules/datamodules/wsi_caption/base copy.py
+pathfact/run_prompt_comparison_backup.py

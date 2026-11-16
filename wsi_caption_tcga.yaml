@@ -1,0 +1,63 @@
+
+train:
+  max_fea_length: 2000
+  max_seq_length: 600
+  threshold: 1
+  num_workers: 0
+  batch_size: 1
+  max_epochs: 200
+
+  d_model: 512
+  d_ff: 512
+  d_vf: 1024
+  num_heads: 4
+  num_layers: 3
+  dropout: 0.1
+
+  weight_decay: 1.0e-5
+  logit_layers: 3
+  bos_idx: 0
+  eos_idx: 0
+  pad_idx: 0
+  use_bn: 0
+  drop_prob_lm: 0.5
+  n_classes: 2
+
+  sample_method: beam_search
+  beam_size: 1
+  temperature: 0.7
+  sample_n: 1
+  group_size: 1
+  output_logsoftmax: 1
+  decoding_constraint: 1
+  suppress_UNK: 1
+  block_trigrams: 1
+
+  lr: 7.0e-05
+  lr_patience: 7
+
+  d_patch: 1536
+
+  data_path_patch: tcga_subset/features
+  manifest_path: tcga_subset/tcga_manifest.csv
+  reports_json_path: reports/tcga_reports_splits.json
+
+  model_load_path:
+  model_type: wsi_caption
+  devices: 1
+  fast_dev_run: false
+  num_folds: 3
+  resume: true
+
+  dataset_type: tcga
+  optim: AdamW
+  amsgrad: true
+
+  output_dir: output/tcga_wsi_caption_500
+  save_period: 1
+  monitor_mode: max
+  monitor_metric: BLEU_4
+  early_stop: 20
+  unused_params: true
+  epochs_val: 1
+  start_val: 1
